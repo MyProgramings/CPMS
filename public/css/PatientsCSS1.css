@@ -1,0 +1,392 @@
+/********** Template CSS **********/
+
+
+body{
+    font-size: small;
+}
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    transition: .5s;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 50px;
+}
+
+
+/*** Layout ***/
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    height: 100vh;
+    overflow-y: auto;
+    background: blue;
+    transition: 0.5s;
+    z-index: 999;
+}
+
+.content {
+    margin-left: 250px;
+    min-height: 100vh;
+    background: rgb(255, 255, 255);
+    transition: 0.5s;
+    text-decoration: none;
+}
+ .cards{
+    margin: 0 50px 0 250px;
+    top:8%;
+    position: absolute;
+    background: white;
+    transition: 0.5s;
+    
+}
+
+  .cardBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+  }
+  
+  .cardBoxIcon {
+    margin-top: 5px;
+    position: relative;
+    width: 100%;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 30px;
+    border: 1px solid black ;
+    border-radius: 30px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  }
+.cardForm{
+    position: relative;
+    background: white;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 20px;
+    display: grid;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+  .cardBoxIcon .cardIcon {
+    position: relative;
+    background: white;
+    text-align: center;
+    border-radius: 20px;
+    height: 30px;
+    width: 30px;
+    margin-left: 30px;
+  }
+
+ .print{
+  margin-right:450px ;}
+
+
+  .cardBox .card {
+    position: relative;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  }
+  
+  .cardBox .card .numbers {
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: blue;
+  }
+  
+  .cardBox .card .cardName {
+    color: blue;
+    font-size: 1.1rem;
+    margin-top: 5px;
+  }
+  
+  .cardBox .card .iconBx {
+    font-size: 3.5rem;
+    color: blue;
+  }
+  
+  .cardBox .card:hover {
+    background: rgb(116, 116, 231);
+  }
+
+  .cardBoxIcon .cardIcon:hover {
+    background: rgb(234, 234, 241);
+  }
+  .cardBox .card:hover .numbers,
+  .cardBox .card:hover .cardName,
+  .cardBox .card:hover .iconBx {
+    color: rgb(255, 255, 255);
+  }
+
+@media (min-width: 992px) {
+    .sidebar {
+        margin-left: 0;
+    }
+
+    .sidebar.open {
+        margin-left: -250px;
+    }
+
+    .content {
+        width: calc(100% - 250px);
+    }
+    .cards {
+        width: calc(100% - 250px);
+    }
+    .content.open {
+        width: 100%;
+        margin-left: 0;
+    }
+    .cards.open {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+}
+
+
+@media (max-width: 1300px) {
+    
+    .cardBoxIcon .print{
+        margin-right: 100px;
+      }
+
+}
+@media (max-width: 991.98px) {
+    .sidebar {
+        margin-left: -250px;
+    }
+
+    .sidebar.open {
+        margin-left: 0;
+    }
+
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .cards {
+        width: 100%;
+        margin-left: 0;
+    }
+    .cardBox {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cardBoxIcon {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .cardBoxIcon .print{
+        margin-right: 100px;
+      }
+}
+
+
+/*** Navbar ***/
+.sidebar .navbar .navbar-nav .nav-link {
+    padding: 7px 20px;
+    color: rgb(238, 238, 241);
+    font-weight: 500;
+    border-left: 3px solid rgb(14, 13, 13);
+    border-radius: 0 30px 30px 0;
+    outline: none;
+}
+
+.sidebar .navbar .navbar-nav .nav-link:hover,
+.sidebar .navbar .navbar-nav .nav-link.active {
+    color: rgb(7, 4, 173);
+    background: rgb(236, 235, 240);
+    border-color: rgb(182, 6, 6);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+}
+
+.sidebar .navbar .navbar-nav .nav-link i {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(16, 16, 201);
+    border-radius: 40px;
+}
+
+.sidebar .navbar .navbar-nav .nav-link:hover i,
+.sidebar .navbar .navbar-nav .nav-link.active i {
+    background: rgb(205, 205, 216);
+    text-decoration: none;
+}
+
+.sidebar .navbar .dropdown-toggle::after {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transition: .5s;
+    text-decoration: none;
+}
+
+.sidebar .navbar .dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(-180deg);
+}
+
+.sidebar .navbar .dropdown-item {
+    margin-left: 60px;
+    border-radius: 0 200px 200px 0;
+    color: rgb(240, 234, 234);
+    font-size: small;
+   
+}
+
+.sidebar .navbar .dropdown-item:hover,
+.sidebar .navbar .dropdown-item.active {
+    background: rgb(233, 233, 236);
+    color: rgb(4, 4, 236);
+    text-decoration: none;
+    
+}
+
+.content .navbar .navbar-nav .nav-link {
+    margin-left: 25px;
+    padding: 12px 0;
+    color: rgb(23, 23, 24);
+    outline: none;
+    text-decoration: none;
+}
+
+.alarm,
+.alarm:hover,
+.alarm:active,
+.alarm::after{
+    text-decoration: none;
+}
+.content .navbar .navbar-nav .nav-link:hover,
+.content .navbar .navbar-nav .nav-link.active {
+    color: rgb(245, 244, 247);
+    text-decoration: none;
+}
+
+.content .navbar .sidebar-toggler,
+.content .navbar .navbar-nav .nav-link i {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(252, 249, 249);
+    border-radius: 40px;
+    text-decoration: none;
+}
+
+.content .navbar .dropdown-item {
+    color: black;
+    text-decoration: none;
+}
+
+.content .navbar .dropdown-item:hover,
+.content .navbar .dropdown-item.active {
+    background: rgb(115, 142, 233);
+    text-decoration: none;
+}
+
+.content .navbar .dropdown-toggle::after {
+    margin-left: 6px;
+    vertical-align: middle;
+    text-decoration: none;
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transition: .5s;
+}
+
+.content .navbar .dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(-180deg);
+    text-decoration: none;
+}
+
+@media (max-width: 575.98px) {
+    .content .navbar .navbar-nav .nav-link {
+        margin-left: 15px;
+    }
+    .cardBox {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .cardBoxIcon {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .cardHeader h2 {
+        font-size: 20px;
+      }
+      .cardBoxIcon .print{
+        margin-right: 100px;
+      }
+}
+
+
+  
+
+
+
