@@ -168,6 +168,7 @@ class RCheckupController extends Controller
         $filterResult = R_checkup::where('name', 'LIKE', '%' . $query . '%')->get();
         return response()->json($filterResult);
     }
+    
     public function getli_ch_dets($id)
     {
         $li_ch_dets = DB::table("li_ch_dets")->where("list_checkup_id", $id)->pluck("name", "id");

@@ -21,7 +21,7 @@
             </div>
             <div class="hidden sm:flex sm:items-center ltr:sm:ml-6 rtl:sm:mr-6">
                 <div class="ltr:ml-3 rtl:mr-3 relative">
-                    @include('layouts.nav.admin.dropdown-nenu-manage.links')
+                    {{-- @include('layouts.nav.admin.dropdown-nenu-manage.links') --}}
                 </div>
             </div>
             <div class="flex">
@@ -55,7 +55,7 @@
             <div class="hidden sm:flex sm:items-center ltr:sm:ml-6 rtl:sm:mr-6">
                 <div class="ltr:ml-3 rtl:mr-3 relative">
                     @if (Auth::user()->role_id == 1)
-                        @include('layouts.nav.admin.dropdown-nenu.links')
+                        {{-- @include('layouts.nav.admin.dropdown-nenu.links') --}}
                     @endif
                 </div>
             </div>
@@ -79,7 +79,7 @@
             <div class="flex"></div>
             <div class="hidden sm:flex sm:items-center">
                 <div class="ltr:ml-3 rtl:mr-3 relative">
-                    @include('layouts.nav.admin.dropdown-language.links')
+                    {{-- @include('layouts.nav.admin.dropdown-language.links') --}}
                 </div>
             </div>
 
