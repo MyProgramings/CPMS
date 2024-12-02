@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="{{ asset('build/assets/app.9e926a85.css') }}">
         <script src="{{ asset('build/assets/app.d225c007.js') }}"></script>
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     </head>
     <body  dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
         <div class="font-sans text-gray-900 antialiased">
